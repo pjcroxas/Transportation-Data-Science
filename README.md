@@ -28,7 +28,7 @@ This data has been collected by LTFRB through its mobile big data partners in te
 ---
 ![image](https://github.com/user-attachments/assets/22e8264e-ed75-41c2-b4e9-aebe7155673d)
 
-                                                                    Fig 1. GPS Logs per User
+***<p style="text-align:center;">Fig 1. GPS Logs per User</p>***
                                                                     
 ![image](https://github.com/user-attachments/assets/e1103865-5338-40a3-8823-f4c8dfaeb745)
 
