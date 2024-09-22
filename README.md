@@ -1,13 +1,11 @@
 # Spatial Analysis of Taxi GPS Data (2019)
 
-# Overview
+### Overview
 ---
-
 Global Positioning System (GPS) data has been a valuable source of information in transportation, urban planning, and logistics. In the Philippines, several transport companies and organization utilized GPS in order to optimize their operational policies to improved revenue and resources. In the government, the use of GPS has been pivotal to improve its key services particularly in public transportation. 
 
-# Project Summary
+### Project Summary
 ---
-
 This data has been collected by LTFRB through its mobile big data partners in telco. The time coverage is March 2018 and 2019 in a 24 hour interval. The objective of this project is to understand and analyze the behavior of commuters using taxi as a mode of transportation. Additionally, we have to recommend policy that will help improve the experience of commuters.
 
 **A. Contents**
@@ -23,26 +21,27 @@ This data has been collected by LTFRB through its mobile big data partners in te
 
 **B. Data Structure**
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/23267e73-ef82-42e8-b595-a92749e1e786/image.png)
+![image](https://github.com/user-attachments/assets/b537033f-c9b5-4786-adf3-b8e98e0050f9)
 
-# I. Temporal Coverage
+
+### I. Temporal Coverage
 ---
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/eed2a1ff-8403-4d11-b9c7-82410d506390/image.png)
+![image](https://github.com/user-attachments/assets/22e8264e-ed75-41c2-b4e9-aebe7155673d)
 
                                                                     Fig 1. GPS Logs per User
+                                                                    
+![image](https://github.com/user-attachments/assets/e1103865-5338-40a3-8823-f4c8dfaeb745)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/351cdce6-5afa-48eb-83ce-155113beba1c/image.png)
-
-                                                         Fig 2. Coverage and Logs per Day
+                                                                Fig 2. Coverage and Logs per Day
                                                          
 - The daily GPS logs in this data is recorded in an average interval of 2 minutes. So the logs does not translate to an individual ride. We can see in the user logs that the records for each user is not equal since per user the interval is not equal.
 - Using Spatial filtering, I reduced the coverage within `metro manila` with allowances for its adjacent provinces such as *bulacan* in the *north*, *rizal* in the *east*, and *cavite* in the *south*. Logs that reach up to *clark*, and down to *laguna* are clipped.
 - For this data to be understand, I utilized its date features and grouped them based on its day and hour. In this way, I will overpower the inaccuracy for the 2 minutes interval of the GPS logs.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/d369f89f-3933-4391-8c5a-7d0f1dd864de/image.png)
+![image](https://github.com/user-attachments/assets/eeb93321-b86d-46ad-933c-52819719c620)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/03b61dce-2610-4ff9-99c5-c634bf6fb53c/image.png)
+
+![image](https://github.com/user-attachments/assets/cb200f89-742e-419c-a55b-c16828ca5073)
 
                                                                 Fig 3. Daily Average Ridership
 
@@ -60,7 +59,7 @@ This data has been collected by LTFRB through its mobile big data partners in te
     - If we compressed this by 4 passengers if ride sharing is implemented, it will require approximately 43 cars in monday morning
     - If we compressed this by 60 passengers, if they used a bus or shuttle service, it will require 3 buses to transport the 175 passengers.
 
-# II. Stay Point Identification
+### II. Stay Point Identification
 ---
 
 A stay point is a location identified from multiple GPS logs based on specific criteria. The GPS logs within this location are averaged to determine its latitude and longitude.
@@ -125,27 +124,43 @@ class StayPointIdentification:
 
 ```
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/767b2afb-94d8-4b7f-8eee-c6caa0911058/image.png)
+![image](https://github.com/user-attachments/assets/0a1fb953-2b9f-4fa4-a185-fd3deab1eeb2)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/024f4dcc-e845-4669-94bf-19f2b695907b/image.png)
 
-# III. Spatial Clustering
+![image](https://github.com/user-attachments/assets/422fd92e-3f46-49eb-9a4c-2fc0aa3dc0e9)
+
+                                                    Fig 4. Result of Stay Point Identification
+### III. Spatial Clustering
 
 ---
 
-1. **Density-Based Spatial Clustering of Application with Noise**
+a. **Density-Based Spatial Clustering of Application with Noise**
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/ebed51a4-8d16-499e-882e-b2a271b78e7b/image.png)
+![image](https://github.com/user-attachments/assets/1bf4ceee-845f-4b86-9dce-7eb5b096535e)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/74370dc5-0fa5-41d4-bd20-dc37edcd313f/image.png)
+                                                  Fig. 5 DBSCAN Spatial Results
+                                                  
+![image](https://github.com/user-attachments/assets/60da60ac-808a-403a-8d76-bbef57f40eff)
 
+                                            Fig. 6 DBSCAN Cumulative time vs Cumulative Count
+                                                
 b. **Hierarchical Clustering**
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/907fdfaa-fbf1-4da8-b1f3-9e71cb93e094/image.png)
+![image](https://github.com/user-attachments/assets/d1748aae-b955-4911-a1ec-f0e5659715d5)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/eb80c43b-dd65-485a-a309-32a9150c4197/image.png)
+    Fig 7. Dendogram
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ef1cfee-86df-4a4c-a9c5-d0e7329840df/f1396d9b-497a-478b-9485-d6a0dc0f2491/image.png)
+
+![image](https://github.com/user-attachments/assets/7e22b1c4-0baf-4caa-a03c-87535baf5121)
+
+    Fig 8. Hierarchical Spatial Results
+
+
+![image](https://github.com/user-attachments/assets/df4d3f4e-fbb3-42b5-90a5-dae358b05a5b)
+
+    Fig 9. Hierachical Cumulative time vs Cumulative Count
+
+c. **Insights**
 
 1. High Cumulative Count, High Cumulative Time: This combination may indicate areas of high traffic density and prolonged dwell time, where there is a lot of activity happening. These areas may be urban centers, shopping districts, or entertainment venues.
 
@@ -153,13 +168,13 @@ b. **Hierarchical Clustering**
 
 1. Cumulative count is low and the cumulative time varies: it suggest that the area is not heavily trafficked but that there are some events or activities that draw people to the area for varying amounts of time
 
-# IV. Recommendations
+### IV. Recommendations
 ---
 
 1. `High-Demand Areas`: Areas with high demand for taxis can be targeted for investment in public transit system such as point-to-point bus system. The stay points within `Antipolo`, `Taguig`, and `QC` can be redesign to have this bus system and connect them to the main transport network such as the MRT and EDSA Busway. In this way, commuters will be encourage to use public transport that offers minimal the transportation cost and time in changing modes.
 
-1. `Low-Demand Areas`: Areas with low demand for taxi is accompanied of short travel time. This areas indicates that the origin-to-destination distance is short and can be done using other mode of transport such as `cycling` or `walking`. This area can be targeted for green spaces infrastructures, such as  exclusive pedestrian and bicycle lanes. This promotes commuters to change in active transport instead of taxi.
+2. `Low-Demand Areas`: Areas with low demand for taxi is accompanied of short travel time. This areas indicates that the origin-to-destination distance is short and can be done using other mode of transport such as `cycling` or `walking`. This area can be targeted for green spaces infrastructures, such as  exclusive pedestrian and bicycle lanes. This promotes commuters to change in active transport instead of taxi.
 
-1. `Varying Demand Areas`: This area is accompanied with varying demand and travel time, stay points that falls in this area are present on both residential and business areas. This might indicates that the demand is based only in specific situation of the commuter. For low travel time, approach for `low-demand area` can be adapted. For areas with high travel time, `carpooling` or `ride-sharing` can be implement within the area. This will reduce space in the road, saves cost for users.
+3. `Varying Demand Areas`: This area is accompanied with varying demand and travel time, stay points that falls in this area are present on both residential and business areas. This might indicates that the demand is based only in specific situation of the commuter. For low travel time, approach for `low-demand area` can be adapted. For areas with high travel time, `carpooling` or `ride-sharing` can be implement within the area. This will reduce space in the road, saves cost for users.
 
-1. `Average-Demand Areas`: The stay points that falls in this category are present in business areas, malls, schools, and local communities. The efforts in this category should focus in green space infrastructure such as inclusive waiting area for children, senior citizens, and PWDs.
+4. `Average-Demand Areas`: The stay points that falls in this category are present in business areas, malls, schools, and local communities. The efforts in this category should focus in green space infrastructure such as inclusive waiting area for children, senior citizens, and PWDs.
