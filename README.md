@@ -28,13 +28,13 @@ This data has been collected by LTFRB through its mobile big data partners in te
 ---
 ![image](https://github.com/user-attachments/assets/22e8264e-ed75-41c2-b4e9-aebe7155673d)
 
-<div align="center">
-  Fig 1. GPS logs per User
-</div>
+<div align="center">Fig 1. GPS logs per User</div>
+
                                                                     
 ![image](https://github.com/user-attachments/assets/e1103865-5338-40a3-8823-f4c8dfaeb745)
 
-                                                                Fig 2. Coverage and Logs per Day
+<div align="center">Fig 2. Coverage and Logs per Day</div>        
+
                                                          
 - The daily GPS logs in this data is recorded in an average interval of 2 minutes. So the logs does not translate to an individual ride. We can see in the user logs that the records for each user is not equal since per user the interval is not equal.
 - Using Spatial filtering, I reduced the coverage within `metro manila` with allowances for its adjacent provinces such as *bulacan* in the *north*, *rizal* in the *east*, and *cavite* in the *south*. Logs that reach up to *clark*, and down to *laguna* are clipped.
@@ -45,7 +45,7 @@ This data has been collected by LTFRB through its mobile big data partners in te
 
 ![image](https://github.com/user-attachments/assets/cb200f89-742e-419c-a55b-c16828ca5073)
 
-                                                                Fig 3. Daily Average Ridership
+<div align="center">Fig 3. Daily Average Ridership</div>                                                                
 
 - **Daily Average Rides:**
     - The daily average rides follow a trend, it has 3 on-peaks: 9 AM, 1 PM, 7 PM
@@ -131,7 +131,8 @@ class StayPointIdentification:
 
 ![image](https://github.com/user-attachments/assets/422fd92e-3f46-49eb-9a4c-2fc0aa3dc0e9)
 
-                                                    Fig 4. Result of Stay Point Identification
+<div align="center">Fig 4. Result of Stay Point Identification</div>
+                                                    
 **III. Spatial Clustering**
 ---
 
@@ -139,27 +140,27 @@ a. **Density-Based Spatial Clustering of Application with Noise**
 
 ![image](https://github.com/user-attachments/assets/1bf4ceee-845f-4b86-9dce-7eb5b096535e)
 
-                                                  Fig. 5 DBSCAN Spatial Results
+<div align="center">Fig. 5 DBSCAN Spatial Results</div>                                                
                                                   
 ![image](https://github.com/user-attachments/assets/60da60ac-808a-403a-8d76-bbef57f40eff)
 
-                                            Fig. 6 DBSCAN Cumulative time vs Cumulative Count
+Fig. 6 DBSCAN Cumulative time vs Cumulative Count</div>                                            
                                                 
 b. **Hierarchical Clustering**
 
 ![image](https://github.com/user-attachments/assets/d1748aae-b955-4911-a1ec-f0e5659715d5)
 
-    Fig 7. Dendogram
+<div align="center">Fig 7. Dendogram</div>   
 
 
 ![image](https://github.com/user-attachments/assets/7e22b1c4-0baf-4caa-a03c-87535baf5121)
 
-    Fig 8. Hierarchical Spatial Results
+<div align="center">Fig 8. Hierarchical Spatial Results</div>   
 
 
 ![image](https://github.com/user-attachments/assets/df4d3f4e-fbb3-42b5-90a5-dae358b05a5b)
 
-    Fig 9. Hierachical Cumulative time vs Cumulative Count
+<div align="center">Fig 9. Hierachical Cumulative time vs Cumulative Count</div>   
 
 c. **Insights**
 
