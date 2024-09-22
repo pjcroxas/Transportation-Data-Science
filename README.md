@@ -1,6 +1,6 @@
 # Spatial Analysis of Taxi GPS Data (2019)
 
-### Overview
+**Overview**
 ---
 Global Positioning System (GPS) data has been a valuable source of information in transportation, urban planning, and logistics. In the Philippines, several transport companies and organization utilized GPS in order to optimize their operational policies to improved revenue and resources. In the government, the use of GPS has been pivotal to improve its key services particularly in public transportation. 
 
