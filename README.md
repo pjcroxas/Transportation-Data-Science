@@ -4,7 +4,7 @@
 ---
 Global Positioning System (GPS) data has been a valuable source of information in transportation, urban planning, and logistics. In the Philippines, several transport companies and organization utilized GPS in order to optimize their operational policies to improved revenue and resources. In the government, the use of GPS has been pivotal to improve its key services particularly in public transportation. 
 
-### Project Summary
+**Project Summary**
 ---
 This data has been collected by LTFRB through its mobile big data partners in telco. The time coverage is March 2018 and 2019 in a 24 hour interval. The objective of this project is to understand and analyze the behavior of commuters using taxi as a mode of transportation. Additionally, we have to recommend policy that will help improve the experience of commuters.
 
@@ -24,7 +24,7 @@ This data has been collected by LTFRB through its mobile big data partners in te
 ![image](https://github.com/user-attachments/assets/b537033f-c9b5-4786-adf3-b8e98e0050f9)
 
 
-### I. Temporal Coverage
+**I. Temporal Coverage**
 ---
 ![image](https://github.com/user-attachments/assets/22e8264e-ed75-41c2-b4e9-aebe7155673d)
 
@@ -59,7 +59,7 @@ This data has been collected by LTFRB through its mobile big data partners in te
     - If we compressed this by 4 passengers if ride sharing is implemented, it will require approximately 43 cars in monday morning
     - If we compressed this by 60 passengers, if they used a bus or shuttle service, it will require 3 buses to transport the 175 passengers.
 
-### II. Stay Point Identification
+**II. Stay Point Identification**
 ---
 
 A stay point is a location identified from multiple GPS logs based on specific criteria. The GPS logs within this location are averaged to determine its latitude and longitude.
@@ -130,8 +130,7 @@ class StayPointIdentification:
 ![image](https://github.com/user-attachments/assets/422fd92e-3f46-49eb-9a4c-2fc0aa3dc0e9)
 
                                                     Fig 4. Result of Stay Point Identification
-### III. Spatial Clustering
-
+**III. Spatial Clustering**
 ---
 
 a. **Density-Based Spatial Clustering of Application with Noise**
@@ -168,7 +167,7 @@ c. **Insights**
 
 1. Cumulative count is low and the cumulative time varies: it suggest that the area is not heavily trafficked but that there are some events or activities that draw people to the area for varying amounts of time
 
-### IV. Recommendations
+**IV. Recommendations**
 ---
 
 1. `High-Demand Areas`: Areas with high demand for taxis can be targeted for investment in public transit system such as point-to-point bus system. The stay points within `Antipolo`, `Taguig`, and `QC` can be redesign to have this bus system and connect them to the main transport network such as the MRT and EDSA Busway. In this way, commuters will be encourage to use public transport that offers minimal the transportation cost and time in changing modes.
