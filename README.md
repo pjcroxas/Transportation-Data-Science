@@ -1,3 +1,4 @@
+theme: jekyll-theme-minima
 # Spatial Analysis of Taxi GPS Data (2019)
 
 **Overview**
